@@ -32,17 +32,21 @@ Create a python script that will pull information from mint and insert it into a
 
 1. Ensure you have Python, MySql, and Apache installed
 2. Install the libraries that the python script requires using pip. First you need to make sure you have pip for python
+  
   ```
   sudo apt-get -y install python-pip
   ```
 3. Install the proper python packages. 
+  
   ```
   sudo pip install mintapi
   ```
+  
   ```
   sudo pip install --allow-external mysql-connector-python mysql-connector-python
   ```
 4. I created a folder in my home/user to put the python script into. 
+  
   ```
   /home/user/CustomPythonScripts
   ```
