@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<meta charset="utf-8" />
+        <title>Net Worth Chart - ObscureCoder</title>
+		<!-- load in the chart.js library -->
+        <script src='Chart.min.js'></script>
+		<!-- gather the jquery lib from google -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>   
+	</head>
+    <body>
+		<canvas id="networthchart" width="600" height="400"></canvas>
+    </body>
+    <script>
+    // you know
+    var chartData;
+	
+	// Disable Async because we have to grab the data from another page before we load the chart
+	jQuery.ajaxSetup({async:false});    
+	
+	// Gather the data from the php script
+	$.get( "../networthjsonforchart.php", function( data ) {   
+		// Parse the data that is returned from the jquery request
+		chartData = JSON.parse(data); 
+	});
+	
+	// Fill the chart
+    var networthchart = document.getElementById('networthchart').getContext('2d');
+    new Chart(networthchart).Line(chartData);     
+    </script>
+</html>
+

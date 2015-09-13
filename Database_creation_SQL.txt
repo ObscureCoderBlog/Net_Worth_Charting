@@ -1,0 +1,25 @@
+/* Create a databse for your mint data table, OR if you have a database you want to use already ignore this step */ 
+CREATE DATABASE customscripts_db;
+
+/* Create a user named : customscripts_user, with the password : mypass */ 
+CREATE USER 'customscripts_user'@'localhost' IDENTIFIED BY 'mypass';
+
+/* Create a user named : mint_read, with the password : mypass */ 
+CREATE USER 'mint_read'@'localhost' IDENTIFIED BY 'mypass';
+
+/* Create a table named : mintinfo */ 
+CREATE TABLE mintinfo(
+id INT(11) NOT NULL AUTO_INCREMENT, 
+accountId INT,
+lastUpdatedInString VARCHAR(100),
+accountValue DECIMAL(10,2),
+accountType VARCHAR(100),
+currentBalance DECIMAL(10,2),
+insertedts TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+primary KEY (id));
+
+/* Full access to the user customscripts_db */ 
+GRANT ALL ON customscripts_db.* TO 'customscripts_user'@'localhost';
+
+/* give the user you created earlier read access to the table mintinfo in the database you created */ 
+GRANT SELECT ON customscripts_db.mintinfo TO 'mint_read'@'localhost';
