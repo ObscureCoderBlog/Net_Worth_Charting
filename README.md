@@ -50,21 +50,21 @@ Create a python script that will pull information from mint and insert it into a
   ```
   /home/user/CustomPythonScripts
   ```
-* Move MintInfoGather.py
+  * Move MintInfoGather.py
 
 5. Create a folder to put your php scripts on your apache server 
   ```
   /var/www/customscripts/
   ```
-* Move networthcsv.php
-* Move networthjsonforchart.php
+  * Move networthcsv.php
+  * Move networthjsonforchart.php
 
 6. Put the html chart onto your apache server
   ```
   /var/www/customscripts/networth
   ```
-* Move index.html
-* Move Chart.min.js
+  * Move index.html
+  * Move Chart.min.js
 
 7. Create a database using the SQL scripts inside of Database_creation_SQL.txt
 
